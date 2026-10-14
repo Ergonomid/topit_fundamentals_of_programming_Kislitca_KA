@@ -11,7 +11,7 @@ class Measurement:
     current_kb: float
     peak_kb: float
 
-def measure_container(name: str, numbers):
+def measure_container(name, numbers):
     gc.collect()
     tracemalloc.start()
     obj = numbers()
@@ -41,7 +41,7 @@ def collect_measurements():
         measure_container("range(100_000)", lambda: range(100_000)),
     ]
 
-def print_report(measurements: list[Measurement]):
+def print_report(measurements):
     headline = f"{'Сценарий':<24}{'N':>8}{'sizeof, Б':>12}{'current, КБ':>14}{'peak, КБ':>12}"
     print(headline)
     print("-" * len(headline))

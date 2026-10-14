@@ -33,7 +33,7 @@ class Record:
     def __init__(self, name):
         self.name = name
     def __repr__(self):
-        return f"Record({self.name!r})"
+        return f"Record({self.name})"
 
 
 registry = weakref.WeakValueDictionary()
